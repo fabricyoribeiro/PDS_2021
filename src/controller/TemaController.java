@@ -23,7 +23,6 @@ public class TemaController implements ActionListener{
 	private FormularioHandler formularioHandler;
 	private TelaMenu telaMenu;
 
-
 	public TemaController(TelaMenu telaMenu) {
 		this.formularioHandler = new FormularioHandler();
 		this.telaMenu = telaMenu;
@@ -61,14 +60,10 @@ public class TemaController implements ActionListener{
 
 		@Override
 		public void focusGained(FocusEvent e) {
-
 		}
 
 		@Override
 		public void focusLost(FocusEvent e) {
-
-
-
 		}
 
 	}
@@ -128,16 +123,12 @@ public class TemaController implements ActionListener{
 			telaMenu.getTemaPanel().getValorF().setText("");
 			telaMenu.getTemaPanel().getCorF().setText("");
 		}
-
-
-		
 	}
 	
 	private Tema novoTema() {
 		return new Tema(telaMenu.getTemaPanel().getNomeF().getText().toUpperCase(), 
 				Float.parseFloat(telaMenu.getTemaPanel().getValorF().getText()),
 				telaMenu.getTemaPanel().getCorF().getText());
-		
 	}
 	
 	private boolean atualizarTema() throws TemaException {

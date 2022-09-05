@@ -24,33 +24,33 @@ public class Festa {
 		this.valorEntrada = valorEntrada;
 	}
 
-	public boolean darDesconto(Cliente cliente) {
-			Calendar c1 = cliente.getDataDeCadastro();
-			Calendar c2 = Calendar.getInstance();
-			
-			if(c2.get(Calendar.MONTH) - c1.get(Calendar.MONTH) == 1) {
-				int anoC1 = c1.get(Calendar.YEAR);
-				int mesC1 = c1.get(Calendar.MONTH);
-
-				int anoC2 = c1.get(Calendar.YEAR);
-				int mesC2 = c1.get(Calendar.MONTH);
-				
-				YearMonth d1 = YearMonth.of(anoC1, mesC1);
-				int quantC1 = d1.lengthOfMonth();
-				
-				YearMonth d2 = YearMonth.of(anoC2, mesC2);
-				int quantC2 = d2.lengthOfMonth();
-				
-				int diferenca = (quantC1 - c1.get(Calendar.DAY_OF_MONTH)) + c2.get(Calendar.DAY_OF_MONTH);
-				
-				if (diferenca >= 30) {
-					cliente.setPossuiDesconto(true);
-					return true;
-				}
-				
-			}
-			return false;
-	}
+//	public boolean darDesconto(Cliente cliente) {
+//			Calendar c1 = cliente.getDataDeCadastro();
+//			Calendar c2 = Calendar.getInstance();
+//			
+//			if(c2.get(Calendar.MONTH) - c1.get(Calendar.MONTH) == 1) {
+//				int anoC1 = c1.get(Calendar.YEAR);
+//				int mesC1 = c1.get(Calendar.MONTH);
+//
+//				int anoC2 = c1.get(Calendar.YEAR);
+//				int mesC2 = c1.get(Calendar.MONTH);
+//				
+//				YearMonth d1 = YearMonth.of(anoC1, mesC1);
+//				int quantC1 = d1.lengthOfMonth();
+//				
+//				YearMonth d2 = YearMonth.of(anoC2, mesC2);
+//				int quantC2 = d2.lengthOfMonth();
+//				
+//				int diferenca = (quantC1 - c1.get(Calendar.DAY_OF_MONTH)) + c2.get(Calendar.DAY_OF_MONTH);
+//				
+//				if (diferenca >= 30) {
+//					cliente.setPossuiDesconto(true);
+//					return true;
+//				}
+//				
+//			}
+//			return false;
+//	}
 
 	public Cliente getCliente() {
 		return cliente;

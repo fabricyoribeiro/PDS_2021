@@ -37,8 +37,6 @@ import util.SpringUtilities;
 		
 		TemaPanel temaPanel;
 		
-		//JButton cadastrarButton;
-
 		public TelaMenu() {
 			super("Sistema");
 			setSize(300, 330);
@@ -47,8 +45,6 @@ import util.SpringUtilities;
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setLocationRelativeTo(null);
 			
-			//cadastrarButton = new JButton("Cadastrar");
-
 			menuBar = new JMenuBar();
 
 			cadastrarMenu = new JMenu("Cadastrar");
@@ -106,7 +102,6 @@ import util.SpringUtilities;
 			
 			add(menuBar, BorderLayout.NORTH);
 
-			//panelGeral = new JPanel(new BorderLayout());
 			panelGeral = new JPanel();
 			
 			telaPricipalPanel = new JPanel();
@@ -120,7 +115,6 @@ import util.SpringUtilities;
 			
 			temaPanel = new TemaPanel();
 			temaPanel.setVisible(false);
-			//add(temaPanel, BorderLayout.SOUTH);
 			
 			formularioBuscarCliente = new BuscarClientePanel();
 			formularioBuscarCliente.setVisible(false);
@@ -131,10 +125,6 @@ import util.SpringUtilities;
 			buscarFestaPanel = new BuscarFestaPanel();
 			buscarFestaPanel.setVisible(false);
 			
-			/*panelGeral.add(telaPricipalPanel, BorderLayout.NORTH);
-			panelGeral.add(formularioBuscarCliente, BorderLayout.CENTER);
-			panelGeral.add(festaPanel, BorderLayout.SOUTH);*/
-			
 			panelGeral.add(telaPricipalPanel);
 			panelGeral.add(formularioBuscarCliente);
 			panelGeral.add(festaPanel);
@@ -142,8 +132,6 @@ import util.SpringUtilities;
 			panelGeral.add(buscarTemaPanel);
 			
 			panelGeral.add(buscarFestaPanel);
-			
-			//SpringUtilities.makeCompactGrid(panelGeral, 4, 1, 6, 6, 6, 6);
 			
 			scrollPane = new JScrollPane(panelGeral, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 

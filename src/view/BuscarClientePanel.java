@@ -19,8 +19,6 @@ public class BuscarClientePanel extends JPanel{
 	private JButton buscarClienteButton;
 	private JPanel inicioPanel, meioPanel ,fimPanel;
 	
-	
-	
 	public BuscarClientePanel() {
 		setLayout(new BorderLayout());
 		setBackground(Color.white);
@@ -54,7 +52,6 @@ public class BuscarClientePanel extends JPanel{
 		add(inicioPanel, BorderLayout.NORTH);
 		add(meioPanel, BorderLayout.CENTER);
 		add(fimPanel, BorderLayout.SOUTH);
-		
 		
 	}
 

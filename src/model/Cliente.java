@@ -1,5 +1,6 @@
 package model;
 
+import java.time.YearMonth;
 import java.util.Calendar;
 
 public class Cliente {
@@ -21,7 +22,37 @@ public class Cliente {
 		this.email = email;
 		this.telefone = telefone;
 		this.dataDeCadastro = dataDeCadastro;
-		this.possuiDesconto = false;
+		this.possuiDesconto = possuiDesconto();
+	}
+	
+	private boolean possuiDesconto() {
+		Calendar c1 = this.dataDeCadastro;
+		Calendar c2 = Calendar.getInstance();
+
+		if( c2.get(Calendar.YEAR) - c1.get(Calendar.YEAR) >= 1) {
+			return true;			
+		}
+		if(c2.get(Calendar.MONTH) - c1.get(Calendar.MONTH) >= 1) {
+			int anoC1 = c1.get(Calendar.YEAR);
+			int mesC1 = c1.get(Calendar.MONTH);
+
+			int anoC2 = c1.get(Calendar.YEAR);
+			int mesC2 = c1.get(Calendar.MONTH);
+			
+			YearMonth d1 = YearMonth.of(anoC1, mesC1);
+			int quantC1 = d1.lengthOfMonth();
+			
+			YearMonth d2 = YearMonth.of(anoC2, mesC2);
+			int quantC2 = d2.lengthOfMonth();
+			
+			int diferenca = (quantC1 - c1.get(Calendar.DAY_OF_MONTH)) + c2.get(Calendar.DAY_OF_MONTH);
+			
+			if(diferenca>=30)
+				return true;
+		}else {
+			return false;
+		}
+		return false;
 	}
 
 	public String isPossuiDesconto() {
@@ -31,7 +62,6 @@ public class Cliente {
 			return  "Sim";
 					
 	}
-
 
 	public void setPossuiDesconto(boolean possuiDesconto) {
 		this.possuiDesconto = possuiDesconto;

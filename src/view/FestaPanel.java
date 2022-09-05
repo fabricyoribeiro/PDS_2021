@@ -34,8 +34,6 @@ public class FestaPanel extends JPanel{
 	public FestaPanel() {
 		setLayout(new BorderLayout());
 		setBackground(Color.white);
-		
-
 
 		cadastroL = new JLabel("CADASTRAR FESTA");
 		clienteL = new JLabel("CPF Cliente: ");
@@ -49,7 +47,6 @@ public class FestaPanel extends JPanel{
 		
 		
 		temaL = new JLabel("Tema: ");
-		//temaT = new JTextField();
 		temas = new Vector();
 		temas.addAll(BaseDeDados.getTemas());
 		
@@ -82,7 +79,6 @@ public class FestaPanel extends JPanel{
 	
 		logoPanel = new JPanel();
 		logoPanel.add(cadastroL);
-		//Panel Building
 		
 		mainPanel= new JPanel(new SpringLayout());
 		mainPanel.add(clienteL);
@@ -107,7 +103,6 @@ public class FestaPanel extends JPanel{
 		add(logoPanel,BorderLayout.NORTH);
 		add(mainPanel,BorderLayout.CENTER);
 		add(enderecoPanel, BorderLayout.SOUTH);
-		//add(buttonPanel,BorderLayout.SOUTH);
 		
 	}
 

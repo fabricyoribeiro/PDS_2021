@@ -18,14 +18,13 @@ public class BaseDeDados {
 		System.out.println("Base iniciada!");
 	}
 
-	public static Cliente buscarCliente(String cpf) //throws ClienteException
+	public static Cliente buscarCliente(String cpf) 
 	{
 		for (Cliente cliente_1 : clientes) {
 			if (cliente_1.getCpf().equals(cpf)) {
 				return cliente_1;
 			}
 		}
-		//throw new ClienteException(TipoErro.NAO_EXISTE_CLIENTE);
 		return null;
 	}
 	public static Festa buscarFesta(Festa festa){
@@ -34,7 +33,7 @@ public class BaseDeDados {
 				return festa_1;
 			}
 		}
-		return null;//throw new ClienteException(TipoErro.NAO_EXISTE_CLIENTE);
+		return null;
 	}
 	public static Festa buscarFesta(String cpf){
 		for (Festa festa_1 : festas) {
@@ -42,7 +41,7 @@ public class BaseDeDados {
 				return festa_1;
 			}
 		}
-		return null;//throw new ClienteException(TipoErro.NAO_EXISTE_CLIENTE);
+		return null;
 	}
 	
 	public static Tema buscarTema(Tema tema){
@@ -51,7 +50,7 @@ public class BaseDeDados {
 				return tema_1;
 			}
 		}
-		return null;//throw new ClienteException(TipoErro.NAO_EXISTE_CLIENTE);
+		return null;
 	}
 	
 	public static Tema buscarTema(String nome)
@@ -109,7 +108,7 @@ public class BaseDeDados {
 	
 	public static boolean adicionarTema(Tema tema) throws TemaException {
 		if (tema == null) {
-			throw new TemaException(TipoErro.NULL_TEMA); //mudar para NULL Tema
+			throw new TemaException(TipoErro.NULL_TEMA); 
 		} else if (buscarTema(tema.getNome()) == null) {
 				Mensagem.exibirMensagem("Tema adicionado com sucesso");
 				return temas.add(tema);
@@ -143,7 +142,6 @@ public class BaseDeDados {
 		}else {
 			throw new FestaException(TipoErro.NULL_FESTA);
 		}
-		//return false;
 	}
 	
 	public static boolean atualizarTema(Tema temaOld, Tema temaNew) throws TemaException{
@@ -152,14 +150,13 @@ public class BaseDeDados {
 				temas.set(temas.indexOf(buscarTema(temaOld.getNome())), temaNew);
 				return true;
 			}else {
-				throw new TemaException(TipoErro.EXISTE_FESTA); //mudar para null tema
+				throw new TemaException(TipoErro.EXISTE_TEMA); 
 			}
 		}else {
 			System.out.println(temaNew.getNome());
 			System.out.println(temaOld.getNome());
 			throw new TemaException(TipoErro.NULL_FESTA);
 		}
-		//return false;
 	}
 	public static boolean removerCliente(Cliente cliente) throws ClienteException {
 		if (cliente != null) {
@@ -184,19 +181,14 @@ public class BaseDeDados {
 				return temas.remove(tema);
 			}
 		}
-		throw new TemaException(TipoErro.NAO_EXISTE_TEMA); //mudar para tema nao existe
+		throw new TemaException(TipoErro.NAO_EXISTE_TEMA); 
 	}
 
-	public static void getClientes() {
-		for (Cliente cliente : clientes) {
-			System.out.println(cliente);
-		}
+	public static ArrayList<Cliente> getClientes() {
+		return clientes;
 	}
 
 	public static ArrayList<Festa> getFestas() {
-//		for (Festa festa : festas) {
-//			System.out.println(festa);
-//		}
 		return festas;
 	}
 	

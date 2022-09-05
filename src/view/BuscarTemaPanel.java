@@ -21,8 +21,6 @@ public class BuscarTemaPanel extends JPanel{
 	private JButton buscarTemaButton;
 	private JPanel inicioPanel, meioPanel ,fimPanel;
 	
-	
-	
 	public BuscarTemaPanel() {
 		setLayout(new BorderLayout());
 		setBackground(Color.white);
@@ -53,8 +51,6 @@ public class BuscarTemaPanel extends JPanel{
 		add(fimPanel, BorderLayout.SOUTH);
 		
 	}
-
-
 
 	public JLabel getBuscarTemaLabel() {
 		return buscarTemaLabel;

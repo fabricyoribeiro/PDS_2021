@@ -23,8 +23,6 @@ public class ClienteController implements ActionListener{
 	private FormularioHandler formularioHandler;
 	private TelaMenu telaMenu;
 
-
-
 	public ClienteController(TelaMenu telaMenu) {
 		this.formularioHandler = new FormularioHandler();
 		this.telaMenu = telaMenu;
@@ -49,7 +47,6 @@ public class ClienteController implements ActionListener{
 		telaMenu.getFormularioCliente().getEnderecoPanel().getCepF().addCaretListener(formularioHandler);
 
 	}
-	
 	
 	private Cliente novoCliente() {
 		Endereco endereco = new Endereco(telaMenu.getFormularioCliente().getEnderecoPanel().getRuaF().getText(), 
@@ -103,16 +100,10 @@ public class ClienteController implements ActionListener{
 		}
 
 		@Override
-		public void focusGained(FocusEvent e) {
-
-		}
+		public void focusGained(FocusEvent e) {}
 
 		@Override
-		public void focusLost(FocusEvent e) {
-
-
-
-		}
+		public void focusLost(FocusEvent e) {}
 
 	}
 	private boolean verificarCampos() {
@@ -151,7 +142,6 @@ public class ClienteController implements ActionListener{
 		if (e.getSource()==telaMenu.getFormularioBuscarCliente().getBuscarClienteButton()) { 
 
 			if(BaseDeDados.buscarCliente(telaMenu.getFormularioBuscarCliente().getCpf().getText()) != null) { 
-				//	Mensagem.exibirMensagem("Cliente está cadastrado");
 				telaMenu.getFormularioCliente().getCpf().setEnabled(false);
 				telaMenu.getFormularioBuscarCliente().setVisible(false);
 				telaMenu.getFormularioCliente().getEnderecoPanel().getButtonPanel().getAtualizarButton().setVisible(true);
@@ -172,12 +162,8 @@ public class ClienteController implements ActionListener{
 				telaMenu.getFormularioCliente().getEnderecoPanel().getCidadeF().setText(BaseDeDados.buscarCliente(telaMenu.getFormularioBuscarCliente().getCpf().getText()).getEndereco().getCidade());
 				telaMenu.getFormularioCliente().getEnderecoPanel().getEstadoF().setText(BaseDeDados.buscarCliente(telaMenu.getFormularioBuscarCliente().getCpf().getText()).getEndereco().getEstado());
 				telaMenu.getFormularioCliente().getEnderecoPanel().getCepF().setText(BaseDeDados.buscarCliente(telaMenu.getFormularioBuscarCliente().getCpf().getText()).getEndereco().getCep());
-				
-				//adicionar panel de possui cadastro quando for relizada a busca
-				//telaMenu.getFormularioCliente().getDescontoField().setEnabled(true);
 				telaMenu.getFormularioCliente().getDescontoLabel().setVisible(true);
 				telaMenu.getFormularioCliente().getDescontoField().setVisible(true);
-
 				telaMenu.getFormularioCliente().getDescontoField().setText(BaseDeDados.buscarCliente(telaMenu.getFormularioBuscarCliente().getCpf().getText()).isPossuiDesconto());
 				
 			}else {
@@ -213,13 +199,6 @@ public class ClienteController implements ActionListener{
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-
 		}
-		
-
-		
 	}
-
-
-
 }

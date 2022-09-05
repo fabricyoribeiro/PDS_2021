@@ -26,8 +26,6 @@ public class FestaController implements ActionListener{
 	private FormularioHandler formularioHandler;
 	private TelaMenu telaMenu;
 
-
-
 	public FestaController(TelaMenu telaMenu) {
 		this.formularioHandler = new FormularioHandler();
 		this.telaMenu = telaMenu;
@@ -44,21 +42,13 @@ public class FestaController implements ActionListener{
 	private class FormularioHandler implements FocusListener, CaretListener{
 
 		@Override
-		public void caretUpdate(CaretEvent e) {
-			
-		}
+		public void caretUpdate(CaretEvent e) {}
 
 		@Override
-		public void focusGained(FocusEvent e) {
-
-		}
+		public void focusGained(FocusEvent e) {}
 
 		@Override
-		public void focusLost(FocusEvent e) {
-
-
-
-		}
+		public void focusLost(FocusEvent e) {}
 
 	}
 	@Override
@@ -113,7 +103,6 @@ public class FestaController implements ActionListener{
 				telaMenu.getFestaPanel().getEnderecoPanel().getEstadoF().setText(BaseDeDados.buscarFesta(telaMenu.getBuscarFestaPanel().getCpf().getText()).getEndereco().getEstado());
 				telaMenu.getFestaPanel().getEnderecoPanel().getCepF().setText(BaseDeDados.buscarFesta(telaMenu.getBuscarFestaPanel().getCpf().getText()).getEndereco().getCep());
 
-				
 				telaMenu.getFestaPanel().getEnderecoPanel().getButtonPanel().getCadastrarButton().setVisible(false);
 				telaMenu.getFestaPanel().getEnderecoPanel().getButtonPanel().getAtualizarButton().setVisible(true);
 				telaMenu.getFestaPanel().getEnderecoPanel().getButtonPanel().getRemoverButton().setVisible(true);
@@ -224,7 +213,4 @@ public class FestaController implements ActionListener{
 				telaMenu.getFestaPanel().getHoraFimT().getText(),
 				Float.parseFloat(telaMenu.getFestaPanel().getValorEntradaT().getText()));
 	}
-
-
-
 }

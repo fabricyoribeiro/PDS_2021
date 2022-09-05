@@ -76,7 +76,6 @@ public class ClientePanel extends JPanel {
 	
 		logoPanel = new JPanel();
 		logoPanel.add(cadastroL);
-		//Panel Building
 		
 		mainPanel= new JPanel(new SpringLayout());
 		mainPanel.add(nomeL);
@@ -93,7 +92,6 @@ public class ClientePanel extends JPanel {
 		mainPanel.add(descontoLabel);
 		mainPanel.add(descontoField);
 		
-		//descontoField.setEnabled(false);
 		descontoLabel.setVisible(false);
 		descontoField.setVisible(false);
 		
@@ -106,8 +104,6 @@ public class ClientePanel extends JPanel {
 		add(logoPanel,BorderLayout.NORTH);
 		add(mainPanel,BorderLayout.CENTER);
 		add(enderecoPanel, BorderLayout.SOUTH);
-		//add(buttonPanel,BorderLayout.SOUTH);
-		
 
 	}
 

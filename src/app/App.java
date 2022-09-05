@@ -17,13 +17,14 @@ import model.FestaException;
 import model.Tema;
 import model.TemaException;
 import view.EnderecoPanel;
-import view.MainScreen;
 import view.TelaMenu;
 
 public class App {
 	public static void main(String[] args) throws TemaException, FestaException {
 		Endereco endereco = new Endereco("rua das flores", "1","barroso", "Serra Talhada","PE","44456670");
-		Cliente cliente1 = new Cliente("edu","381.647.600-72", "0011100011",endereco, "edu@gmail", "88888888", Calendar.getInstance());
+		Calendar data = Calendar.getInstance();
+		data.set(2021, 8, 5);
+		Cliente cliente1 = new Cliente("edu","381.647.600-72", "0011100011",endereco, "edu@gmail", "88888888", data);
 		Tema tema = new Tema("FANTASIA", 22, "Azul");
 		Festa festa = new Festa(cliente1, tema, endereco, Calendar.getInstance(), "18:00", "5:00", 33);
 		
@@ -47,12 +48,7 @@ public class App {
 				| UnsupportedLookAndFeelException e) {
 			e.printStackTrace();
 		}
-		//MainScreen tela = new MainScreen();
-		
-		//TelaMenu telaMenu = new TelaMenu();
-		//MenuController controller = new MenuController(telaMenu);
-		
-		//new Controller();
+
 		new ControllerGeral();
 		
 	}

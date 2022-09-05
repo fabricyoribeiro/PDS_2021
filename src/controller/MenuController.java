@@ -11,12 +11,10 @@ import javax.swing.event.CaretListener;
 
 import model.BaseDeDados;
 import model.Cliente;
-import view.MainScreen;
 import view.TelaMenu;
 
 public class MenuController implements ActionListener, CaretListener{
 	
-	//private MainScreen tela;
 	private TelaMenu telaMenu;
 	private SairHandler sairHandler;
 
@@ -94,17 +92,14 @@ public class MenuController implements ActionListener, CaretListener{
 			telaMenu.getTemaPanel().setVisible(true);
 		}
 		
-		//ZANELLI
 		if(e.getSource()==telaMenu.getExitMenuItemCadastrar()) {
 			telaMenu.getFormularioCliente().setVisible(false);
 			telaMenu.getFormularioCliente().getEnderecoPanel().setVisible(false);
 			telaMenu.getTemaPanel().setVisible(false);
 			telaMenu.getBuscarFestaPanel().setVisible(false);
-
-			//FALTA IMPLEMENTAR A FESTA PARA COMPLETAR ESSE IF
+			telaMenu.getFestaPanel().setVisible(false);
 		}
 		
-		//ZANELLI
 		if(e.getSource()==telaMenu.getClienteMenuItemBuscar()) {
 			telaMenu.getFormularioCliente().setVisible(false);
 			telaMenu.getFormularioCliente().getEnderecoPanel().setVisible(false);

@@ -19,8 +19,6 @@ public class BuscarFestaPanel  extends JPanel{
 	private JButton buscarFestaButton;
 	private JPanel inicioPanel, meioPanel ,fimPanel;
 	
-	
-	
 	public BuscarFestaPanel() {
 		setLayout(new BorderLayout());
 		setBackground(Color.white);
@@ -57,29 +55,20 @@ public class BuscarFestaPanel  extends JPanel{
 		add(inicioPanel, BorderLayout.NORTH);
 		add(meioPanel, BorderLayout.CENTER);
 		add(fimPanel, BorderLayout.SOUTH);
-		
-		
 	}
-
 
 
 	public JLabel getBuscarFestaLabel() {
 		return buscarFestaLabel;
 	}
 
-
-
 	public JLabel getCpfLabel() {
 		return cpfLabel;
 	}
 
-
-
 	public JFormattedTextField getCpf() {
 		return cpf;
 	}
-
-
 
 	public JButton getBuscarFestaButton() {
 		return buscarFestaButton;
